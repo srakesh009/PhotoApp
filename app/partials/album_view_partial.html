@@ -3,10 +3,25 @@
 <div class="alert alert-danger" ng-show="page_loading_error">
     {{page_loading_error}}
 </div>
-    <div class="photo thumbnail" ng-repeat="photo in photos" style="width: 250px; float: left; margin-right: 10px">
+   <!-- <div class="photo thumbnail" ng-repeat="photo in photos" style="width: 250px; float: left; margin-right: 10px">
         <a href="index.html#/albums/img/{{photo.filename}}">
-              <img ng-src="/img/{{photo.filename}}"/>
+              <img src="/img/{{photo.filename}}"/>
               <p>{{photo.description}}</p>
         </a>
+    </div>-->
+
+
+
+    <div class="row">
+        <div class="col-sm-6 col-md-4" ng-repeat="photo in photos">
+            <div class="thumbnail">
+                <a href="index.html#/albums/img/{{photo.filename}}" class="thumbnail">
+                    <img src="/img/{{photo.filename}}" alt="..." style="height:300px ;width:300px; ">
+                </a>
+                <div class="caption">
+                    <h3>{{photo.description}}</h3>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
